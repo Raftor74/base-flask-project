@@ -6,7 +6,4 @@ CREATE TABLE IF NOT EXISTS "users" (
 	"email"	TEXT NOT NULL UNIQUE,
 	"password"	TEXT NOT NULL
 );
-INSERT INTO "users" VALUES (1,'Иван','Иванович','test@test.ru','123456');
-INSERT INTO "users" VALUES (2,'Василий','Васильевич','test24@test.ru','4788484848');
-INSERT INTO "users" VALUES (3,'Георгиев','Георгий','test92@mail.ru','4646464646');
 COMMIT;

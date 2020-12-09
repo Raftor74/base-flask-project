@@ -32,6 +32,15 @@ class BaseModel:
         result = self.connection.execute(query, values).fetchone()
         return dict(result) if result is not None else None
 
+    def get_by_field(self, field_name, value):
+        """Возвращает запись по значению поля field_name"""
+        query = f"""
+            SELECT * FROM {self.table_name} WHERE {field_name} = ?
+        """
+        values = (value,)
+        result = self.connection.execute(query, values).fetchone()
+        return dict(result) if result is not None else None
+
     def create(self, attributes: dict):
         """ Создаёт запись в таблице """
 
